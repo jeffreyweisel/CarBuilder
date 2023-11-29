@@ -127,26 +127,26 @@ app.MapGet("/orders", () =>
         Wheels = wheels.FirstOrDefault(w => w.Id == o.WheelId) == null ? null : new WheelsDTO
         {
             Id = o.WheelId,
-            Price = wheels.First(w => w.Id == o.WheelId).Price,
-            Style = wheels.First(w => w.Id == o.WheelId).Style
+            Price = wheels.FirstOrDefault(w => w.Id == o.WheelId).Price,
+            Style = wheels.FirstOrDefault(w => w.Id == o.WheelId).Style
         },
         Technology = technologies.FirstOrDefault(t => t.Id == o.TechnologyId) == null ? null : new TechnologyDTO
         {
             Id = o.TechnologyId,
-            Price = technologies.First(t => t.Id == o.TechnologyId).Price,
-            Package = technologies.First(t => t.Id == o.TechnologyId).Package
+            Price = technologies.FirstOrDefault(t => t.Id == o.TechnologyId).Price,
+            Package = technologies.FirstOrDefault(t => t.Id == o.TechnologyId).Package
         },
         Paint = paintColors.FirstOrDefault(pc => pc.Id == o.PaintId) == null ? null : new PaintColorDTO
         {
             Id = o.PaintId,
-            Price = paintColors.First(pc => pc.Id == o.PaintId).Price,
-            Color = paintColors.First(pc => pc.Id == o.PaintId).Color
+            Price = paintColors.FirstOrDefault(pc => pc.Id == o.PaintId).Price,
+            Color = paintColors.FirstOrDefault(pc => pc.Id == o.PaintId).Color
         },
         Interior = interiors.FirstOrDefault(i => i.Id == o.InteriorId) == null ? null : new InteriorDTO
         {
             Id = o.InteriorId,
-            Price = interiors.First(i => i.Id == o.InteriorId).Price,
-            Material = interiors.First(i => i.Id == o.InteriorId).Material
+            Price = interiors.FirstOrDefault(i => i.Id == o.InteriorId).Price,
+            Material = interiors.FirstOrDefault(i => i.Id == o.InteriorId).Material
         }
     });
 });
