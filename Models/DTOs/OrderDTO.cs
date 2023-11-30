@@ -12,4 +12,6 @@ public class OrderDTO
     public InteriorDTO Interior { get; set;}
      public TechnologyDTO Technology { get; set; }
     public PaintColorDTO Paint { get; set;}
+    public decimal TotalCost { get; set;}
+    public bool Completed { get; set; }
 }
